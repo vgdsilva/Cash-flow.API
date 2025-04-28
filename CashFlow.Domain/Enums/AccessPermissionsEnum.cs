@@ -4,7 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CashFlow.Domain.Entities;
-internal class CashFlowConfiguration
+namespace CashFlow.Domain.Enums;
+
+
+public enum AccessPermissionsEnum
 {
+    VIEW,
+    EDIT,
+    ADMIN
 }

@@ -1,10 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CashFlow.Domain.Entities;
-internal class CashFlow
+
+public class CashFlow : EntityControl
 {
+    public string Name { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    
+    public Guid OwnerId { get; set; } = Guid.Empty;
+
+
+    [ForeignKey(nameof(OwnerId))]
+    public virtual User Owner { get; set; }
 }
